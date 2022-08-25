@@ -154,3 +154,8 @@ footer {
 footer > ul > li{
     color: white;
 }
+
+footer > ul > li > a{
+    text-decoration: none;
+    color: white;
+}

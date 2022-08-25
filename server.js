@@ -14,6 +14,10 @@ const mediaRoutes = require('./routes/media')
 const qAndARoutes = require('./routes/q&a')
 const scheduleRoutes = require('./routes/schedule')
 const travelAndLodgingRoutes = require('./routes/travel&lodging')
+const aboutUsRoutes = require('./routes/aboutUs')
+const createYourOwnEventsRoutes = require('./routes/createYourOwnEvent')
+const helpAndSupportRoutes = require('./routes/help&support')
+const inspirationRoutes = require('./routes/inspiration')
 
 require('dotenv').config({path: './config/.env'}) // get env file enabling us to use env file in application
 // Passport config which includes a function
@@ -53,9 +57,13 @@ app.use('/todos', todoRoutes) // anything with todos
 app.use('/activities', activitiesRoutes)
 app.use('/journal', journalRoutes)
 app.use('/media', mediaRoutes)
-app.use('/q&a', qAndARoutes)
+app.use('/qAnda', qAndARoutes)
 app.use('/schedule', scheduleRoutes)
-app.use('/travel&lodging', travelAndLodgingRoutes)
+app.use('/travelAndlodging', travelAndLodgingRoutes)
+app.use('/aboutUs', aboutUsRoutes)
+app.use('/createYourOwnEvent', createYourOwnEventsRoutes)
+app.use('/helpAndsupport', helpAndSupportRoutes)
+app.use('/inspiration', inspirationRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
