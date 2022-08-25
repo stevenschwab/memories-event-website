@@ -43,6 +43,7 @@ header {
 }
 
 nav{
+    width: 100%;
     grid-column: 1;
     grid-row: 1;
 }

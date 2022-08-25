@@ -8,6 +8,12 @@ const connectDB = require('./config/database') // db file inside of config folde
 const authRoutes = require('./routes/auth') // look at requests and determine which controller to use
 const homeRoutes = require('./routes/home') // look at requests and determine which controller to use
 const todoRoutes = require('./routes/todos') // look at requests and determine which controller to use
+const activitiesRoutes = require('./routes/activities')
+const journalRoutes = require('./routes/journal')
+const mediaRoutes = require('./routes/media')
+const qAndARoutes = require('./routes/q&a')
+const scheduleRoutes = require('./routes/schedule')
+const travelAndLodgingRoutes = require('./routes/travel&lodging')
 
 require('dotenv').config({path: './config/.env'}) // get env file enabling us to use env file in application
 // Passport config which includes a function
@@ -44,6 +50,12 @@ app.use(passport.session())
 app.use('/', homeRoutes) // beginning of the router, req on main route when the home page loads
 app.use('/auth', authRoutes) // using auth to log in or log out
 app.use('/todos', todoRoutes) // anything with todos
+app.use('/activities', activitiesRoutes)
+app.use('/journal', journalRoutes)
+app.use('/media', mediaRoutes)
+app.use('/q&a', qAndARoutes)
+app.use('/schedule', scheduleRoutes)
+app.use('/travel&lodging', travelAndLodgingRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log(`Server running on port ${process.env.PORT}`);
