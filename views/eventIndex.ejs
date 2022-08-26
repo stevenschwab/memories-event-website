@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Your Own Event</title>
-    <link rel="stylesheet" href="css/createYourOwnEvent.css">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="css/eventIndex.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -25,19 +25,28 @@
 
     <!-- photos -->
     <main>
-        <section>
-            <form action="/createEventName" method="post">
-                <input type="text" name="eventNameFromJSFile">
-            </form>
-            <h1>Create Your Own Event</h1>
-            <h3>Check out the activities Jon has organized</h3>
-        </section>
-        <section class="images">
-            <img id="topLeft" src="img/topLeft.png" alt="">
-            <img id="topMiddle" src="img/topMiddle.png" alt="">
-            <img id="bottomLeft" src="img/bottomLeft.png" alt="">
-            <img id="right" src="img/right.png" alt="">
-        </section>
+        <h1>Events</h1>
+        <ul>
+        <% events.forEach( el => { %>
+            <li class="eventItem" data-id="<%=el._id%>">
+                <span><%= el.eventName %></span>
+                <span class="edit"> Edit </span>
+                <span class="del"> Delete </span>
+                <span class="view"> View </span>
+            </li>
+        <% }) %>
+        </ul>
+
+        <form action="/createYourOwnEvent/createEvent" method="post">
+            <input type="text" placeholder="Enter Event Name" name="eventName">
+            <input type="text" placeholder="Enter Event SubHeader" name="eventSubHeader">
+            <h4>Add 4 Images</h4>
+            <input type="image" src="" alt="" name="pictureOne">
+            <input type="image" src="" alt="" name="pictureTwo">
+            <input type="image" src="" alt="" name="pictureThree">
+            <input type="image" src="" alt="" name="pictureFour">
+            <input type="submit">
+        </form>
     </main>
 
     <!-- footer on the left hand-side of the page -->

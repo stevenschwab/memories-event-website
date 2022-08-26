@@ -1,18 +1,18 @@
 const mongoose = require('mongoose')
 // schema gives the documents you put into mongodb a structure
-const TodoSchema = new mongoose.Schema({
-    todo: {
+const EventSchema = new mongoose.Schema({
+    eventName: {
         type: String,
         required: true,
     },
-    completed: {
-        type: Boolean,
+    eventSubHeader: {
+        type: String,
         required: true,
     },
-    microsoftId: {
+    userId: {
         type: String,
         required: true
     }
 })
 
-module.exports = mongoose.model('Todo', TodoSchema)
+module.exports = mongoose.model('Event', EventSchema)

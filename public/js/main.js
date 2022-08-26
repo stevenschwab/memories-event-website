@@ -1,27 +1,27 @@
-const deleteBtn = document.querySelectorAll('.del') //grab everything having delete class
-const todoItem = document.querySelectorAll('span.notCompleted')
-const todoComplete = document.querySelectorAll('span.completed')
-// add an event listener to everything having delete class
+const deleteBtn = document.querySelectorAll('.del')
+const editEvent = document.querySelectorAll('.edit')
+const viewEvent = document.querySelectorAll('.view')
+
 Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+    el.addEventListener('click', deleteEvent)
 })
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+Array.from(editEvent).forEach((el)=>{
+    el.addEventListener('click', editEventPage)
 })
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+Array.from(viewEvent).forEach((el)=>{
+    el.addEventListener('click', viewEventPage)
 })
 
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id //grab the todo trying to delete (dataset property of id)
+async function deleteEvent(){
+    const eventId = this.parentNode.dataset.id;
     try {
-        const response = await fetch('todos/deleteTodo', {
+        const response = await fetch('createYourOwnEvent/deleteEvent', {
             method: 'delete',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
-              'todoIdFromJSFile': todoId,
+              'eventIdFromJSFile': eventId,
             })
           })
         const data = await response.json()
@@ -33,8 +33,8 @@ async function deleteTodo(){
     }
 }
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
+async function editEventPage(){
+    const eventId = this.parentNode.dataset.id
     try{
         const response = await fetch('todos/markComplete', {
             method: 'put',
@@ -52,8 +52,8 @@ async function markComplete(){
     }
 }
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
+async function viewEventPage(){
+    const eventId = this.parentNode.dataset.id
     try{
         const response = await fetch('todos/markIncomplete', {
             method: 'put',
