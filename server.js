@@ -7,8 +7,7 @@ const MongoStore = require('connect-mongo') // Passing session to db
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database') // db file inside of config folder which enables connection to mongo DB
-const authRoutes = require('./routes/auth') // look at requests and determine which controller to use
-const homeRoutes = require('./routes/home') // look at requests and determine which controller to use
+const mainRoutes = require('./routes/main')
 const eventsRoutes = require('./routes/events') // look at requests and determine which controller to use
 const activitiesRoutes = require('./routes/activities')
 const journalRoutes = require('./routes/journal')
@@ -56,8 +55,7 @@ app.use(passport.session())
 
 app.use(flash())
 
-app.use('/', homeRoutes) // beginning of the router, req on main route when the home page loads
-app.use('/auth', authRoutes) // using auth to log in or log out
+app.use('/', mainRoutes)
 app.use('/events', eventsRoutes) // anything with todos
 app.use('/activities', activitiesRoutes)
 app.use('/journal', journalRoutes)
