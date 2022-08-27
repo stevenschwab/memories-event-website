@@ -2,6 +2,6 @@ const express = require('express')
 const router = express.Router()
 const eventController = require('../controllers/events')
 
-router.get('/', eventController.viewIndex) //sees the route and tells the home controller to run
+router.get('/:id', eventController.getEvent) //sees the route and tells the home controller to run
 
 module.exports = router
