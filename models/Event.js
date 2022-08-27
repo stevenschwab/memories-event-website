@@ -9,9 +9,33 @@ const EventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    userId: {
+    pictureOne: {
         type: String,
-        required: true
+        required: true,
+    },
+    pictureTwo: {
+        type: String,
+        required: true,
+    },
+    pictureThree: {
+        type: String,
+        required: true,
+    },
+    pictureFour: {
+        type: String,
+        required: true,
+    },
+    cloudinaryId: {
+        type: String,
+        require: true,
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
     }
 })
 
