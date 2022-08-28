@@ -53,12 +53,20 @@
         </ul>
 
         <h2>Create An Event</h2>
-        <form action="/createYourOwnEvent/createEvent" method="post">
-            <input type="text" placeholder="Enter Event Name" name="eventName">
-            <input type="text" placeholder="Enter Event SubHeader" name="eventSubHeader">
-            <h4>Add Images</h4>
-            <input type="image" src="" alt="" name="image">
-            <input type="submit">
+        <form action="/createYourOwnEvent/createEvent" enctype="multipart/form-data" method="POST">
+            <div class="mb-3">
+                <label for="eventName" class="form-label">Event Name</label>
+                <input type="text" class="form-control" id="eventName" name="eventName">
+            </div>
+            <div class="mb-3">
+                <label for="eventSubHeader" class="form-label">Event Sub-Header Name</label>
+                <input type="text" class="form-control" id="eventSubHeader" name="eventSubHeader">
+            </div>
+            <div class="mb-3">
+                <label for="imageUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         </form>
 
         <a href="/logout">Logout</a>
