@@ -1,7 +1,7 @@
-const express = require('express')
-const passport = require('passport')
-const config = require('../config/config')
-const router = express.Router()
+const express = require('express');
+const passport = require('passport');
+const config = require('../config/config');
+const router = express.Router();
 
 // after people log in, what do you want them to do
 router.get('/login',
@@ -62,4 +62,4 @@ router.get('/logout', function(req, res, next){
     });
 });
 
-module.exports = router
+module.exports = router;

@@ -1,5 +1,5 @@
 module.exports = {
-    getHomePage: (req, res) => {
+    getIndex: (req, res) => {
         res.render('home.ejs')
     }
 };

@@ -1,5 +1,5 @@
 module.exports = {
-    getAboutUs: (req, res) => {
+    getAboutUsPage: (req, res) => {
         res.render('aboutUs.ejs');
     },
 };
