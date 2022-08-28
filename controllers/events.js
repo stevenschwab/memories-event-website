@@ -9,73 +9,73 @@ module.exports = {
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     },
     getActivities: async (req, res) => {
         try {
-            const event = await Event.findById(req.params.id);
+            const activities = await Activities.findById(req.params.id);
             res.render('activities.ejs', {
-                event: event, 
+                activities: activities, 
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     },
     getJournal: async (req, res) => {
         try {
-            const event = await Event.findById(req.params.id);
+            const journalEntries = await JournalEntries.findById(req.params.id);
             res.render('journal.ejs', {
-                event: event, 
+                journalEntries: journalEntries, 
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     },
     getMedia: async (req, res) => {
         try {
-            const event = await Event.findById(req.params.id);
+            const media = await Media.findById(req.params.id);
             res.render('media.ejs', {
-                event: event, 
+                media: media, 
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     },
     getQAndA: async (req, res) => {
         try {
-            const event = await Event.findById(req.params.id);
+            const questionsAndAnswers = await qAndA.findById(req.params.id);
             res.render('q&a.ejs', {
-                event: event, 
+                questionsAndAnswers: questionsAndAnswers, 
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     },
     getSchedule: async (req, res) => {
         try {
-            const event = await Event.findById(req.params.id);
+            const schedule = await Schedule.findById(req.params.id);
             res.render('schedule.ejs', {
-                event: event, 
+                schedule: schedule, 
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     },
     getTravelAndLodging: async (req, res) => {
         try {
-            const event = await Event.findById(req.params.id);
+            const travelAndLodging = await TravelAndLodging.findById(req.params.id);
             res.render('travel&lodging.ejs', {
-                event: event, 
+                travelAndLodging: travelAndLodging, 
                 user: req.user
             });
         } catch(err) {
-            console.log(err)
+            console.log(err);
         }
     }
 }

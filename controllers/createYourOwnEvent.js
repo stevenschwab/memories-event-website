@@ -2,12 +2,13 @@ const cloudinary = require("../middleware/cloudinary");
 const Event = require('../models/Event');
 
 module.exports = {
-    getIndex: async (req, res) => {
+    getEventIndex: async (req, res) => {
         console.log(req.user);
         try {
-            const events = await Event.find({ userId: req.user.id });
+            const events = await Event.find({ user: req.user.id });
             res.render('eventIndex.ejs', {
-                event: events, 
+                event: events,
+                user: req.user
             });
         } catch(err) {
             console.log(err);

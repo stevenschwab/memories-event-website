@@ -1,5 +1,5 @@
 module.exports = {
-    getIndex: (req, res) => {
+    getInspirationPage: (req, res) => {
         res.render('inspiration.ejs')
     }
-} // spits out an object with a method
+};
