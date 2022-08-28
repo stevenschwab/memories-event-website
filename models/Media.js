@@ -1,14 +1,6 @@
 const mongoose = require('mongoose');
 
-const EventSchema = new mongoose.Schema({
-    eventName: {
-        type: String,
-        required: true,
-    },
-    eventSubHeader: {
-        type: String,
-        required: true,
-    },
+const MediaSchema = new mongoose.Schema({
     image: {
         type: String,
         required: true,
@@ -16,6 +8,14 @@ const EventSchema = new mongoose.Schema({
     cloudinaryId: {
         type: String,
         require: true,
+    },
+    isAnonymous: {
+        type: Boolean,
+        required: true,
+    },
+    likes: {
+        type: Number,
+        required: true,
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -27,4 +27,4 @@ const EventSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('Event', EventSchema);
+module.exports = mongoose.model('Media', MediaSchema);

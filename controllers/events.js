@@ -15,7 +15,7 @@ module.exports = {
     getActivities: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            res.render('eventPage.ejs', {
+            res.render('activities.ejs', {
                 event: event, 
                 user: req.user
             });
@@ -26,7 +26,7 @@ module.exports = {
     getJournal: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            res.render('eventPage.ejs', {
+            res.render('journal.ejs', {
                 event: event, 
                 user: req.user
             });
@@ -37,7 +37,7 @@ module.exports = {
     getMedia: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            res.render('eventPage.ejs', {
+            res.render('media.ejs', {
                 event: event, 
                 user: req.user
             });
@@ -48,7 +48,7 @@ module.exports = {
     getQAndA: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            res.render('eventPage.ejs', {
+            res.render('q&a.ejs', {
                 event: event, 
                 user: req.user
             });
@@ -59,7 +59,7 @@ module.exports = {
     getSchedule: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            res.render('eventPage.ejs', {
+            res.render('schedule.ejs', {
                 event: event, 
                 user: req.user
             });
@@ -70,7 +70,7 @@ module.exports = {
     getTravelAndLodging: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
-            res.render('eventPage.ejs', {
+            res.render('travel&lodging.ejs', {
                 event: event, 
                 user: req.user
             });
