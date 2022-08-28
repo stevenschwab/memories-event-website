@@ -3,10 +3,11 @@ const Event = require('../models/Event')
 module.exports = {
     getEvent: async (req, res) => {
         try {
-            const event = await Event.find({ _id: req.parameter.eventIdFromJSFile });
-            res.render('events.ejs', {
+            const event = await Event.findById(req.params.id);
+            res.render('eventPage.ejs', {
                 event: event, 
-            }) //tells ejs to render and responds with html
+                user: req.user
+            });
         } catch(err) {
             console.log(err)
         }

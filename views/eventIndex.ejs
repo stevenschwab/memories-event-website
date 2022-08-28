@@ -30,9 +30,24 @@
         <% events.forEach( el => { %>
             <li class="eventItem" data-id="<%=el._id%>">
                 <span><%= el.eventName %></span>
-                <span class="edit"> Edit </span>
-                <span class="del"> Delete </span>
-                <span class="view"> View </span>
+                <form 
+                    action="/events/editEvent/<% el.id %>" 
+                    method="get"
+                >
+                    <button class="btn btn-primary fa fa-edit" type="submit"></button>
+                </form>
+                <form 
+                    action="/events/viewEvent/<% el.id %>" 
+                    method="get"
+                >
+                    <button class="btn btn-primary fa fa-view" type="submit"></button>
+                </form>
+                <form 
+                    action="/events/deleteEvent/<% el.id %>?_method=DELETE" 
+                    method="post"
+                >
+                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                </form>
             </li>
         <% }) %>
         </ul>
@@ -62,6 +77,6 @@
         </ul>
     </footer>
 
-    <script src='js/main.js'></script>
+    
 </body>
 </html>

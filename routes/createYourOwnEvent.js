@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const upload = require("../middleware/multer")
 const createYourOwnEventController = require('../controllers/createYourOwnEvent')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
@@ -7,10 +8,10 @@ router.get('/', ensureAuth, createYourOwnEventController.getIndex) //sees the ro
 
 router.get('/viewEvent', createYourOwnEventController.viewEvent)
 
-router.post('/createEvent', createYourOwnEventController.createEvent)
+router.post('/createEvent', upload.single("file"), createYourOwnEventController.createEvent)
 
-router.put('/editEvent', createYourOwnEventController.editEvent)
+router.put('/editEvent/:id', ensureAuth, createYourOwnEventController.editEvent)
 
-router.delete('/deleteEvent', createYourOwnEventController.deleteEvent)
+router.delete('/deleteEvent/:id', ensureAuth, createYourOwnEventController.deleteEvent)
 
 module.exports = router
