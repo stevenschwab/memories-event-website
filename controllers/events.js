@@ -1,6 +1,14 @@
 const Event = require('../models/Event')
 
 module.exports = {
+    getProfile: async (req, res) => {
+        try {
+          const posts = await Event.find({ user: req.user.id });
+          res.render("profile.ejs", { user: req.user });
+        } catch (err) {
+          console.log(err);
+        }
+    },
     getEvent: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
