@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="css/eventIndex.css">
+    <link rel="stylesheet" type="text/css" href="/css/eventIndex.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -19,6 +19,7 @@
                 <li><a href="/media">MEDIA</a></li>
                 <li><a href="/schedule">SCHEDULE</a></li>
                 <li><a href="/qAnda">Q&A</a></li>
+                <a href="/logout">Logout</a>
             </ul>
         </nav>
     </header>
@@ -27,30 +28,35 @@
     <main>
         <h1>Events</h1>
         <ul>
-        <% events.forEach( el => { %>
-            <li class="eventItem" data-id="<%=el._id%>">
-                <span><%= el.eventName %></span>
-                <form 
-                    action="/events/editEvent/<% el.id %>" 
-                    method="get"
-                >
-                    <button class="btn btn-primary fa fa-edit" type="submit"></button>
-                </form>
-                <form 
-                    action="/events/viewEvent/<% el.id %>" 
-                    method="get"
-                >
-                    <button class="btn btn-primary fa fa-view" type="submit"></button>
-                </form>
-                <form 
-                    action="/events/deleteEvent/<% el.id %>?_method=DELETE" 
-                    method="post"
-                >
-                    <button class="btn btn-primary fa fa-trash" type="submit"></button>
-                </form>
-            </li>
-        <% }) %>
+        <% if (events) { %>
+            <% events.forEach( el => { %>
+                <li class="eventItem" data-id="<%= el._id %>">
+                    <span><%= el.eventName %></span>
+                    <form 
+                        action="/events/editEvent/<%= el._id %>" 
+                        method="get"
+                    >
+                        <button class="btn btn-primary fa fa-edit" type="submit"></button>
+                    </form>
+                    <form 
+                        action="/events/<%= el._id %>" 
+                        method="get"
+                    >
+                        <button class="btn btn-primary fa fa-eye" type="submit"></button>
+                    </form>
+                    <form 
+                        action="/createYourOwnEvent/deleteEvent/<%= el._id %>?_method=DELETE" 
+                        method="post"
+                    >
+                        <button class="btn btn-primary fa fa-trash" type="submit"></button>
+                    </form>
+                </li>
+            <% }) %>
+        <% } %>
         </ul>
+        <% if (events.length === 0) { %>
+        <span>No Events Created</span>
+        <% } %>
 
         <h2>Create An Event</h2>
         <form action="/createYourOwnEvent/createEvent" enctype="multipart/form-data" method="POST">
@@ -69,7 +75,6 @@
             <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
         </form>
 
-        <a href="/logout">Logout</a>
     </main>
 
     <!-- footer on the left hand-side of the page -->

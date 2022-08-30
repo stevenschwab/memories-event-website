@@ -8,4 +8,6 @@ router.get('/', ensureAuth, createYourOwnEventController.getEventIndex);
 
 router.post('/createEvent', upload.single("file"), createYourOwnEventController.createEvent);
 
+router.delete("/deleteEvent/:id", createYourOwnEventController.deleteEvent);
+
 module.exports = router;

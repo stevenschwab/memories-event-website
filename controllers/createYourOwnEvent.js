@@ -7,7 +7,7 @@ module.exports = {
         try {
             const events = await Event.find({ user: req.user.id });
             res.render('eventIndex.ejs', {
-                event: events,
+                events: events,
                 user: req.user
             });
         } catch(err) {
@@ -31,5 +31,19 @@ module.exports = {
         } catch(err) {
             console.log(err);
         }
-    }
-}
+    },
+    deleteEvent: async (req, res) => {
+        try {
+          // Find event by id
+          let event = await Event.findById({ _id: req.params.id });
+          // Delete image from cloudinary
+          await cloudinary.uploader.destroy(event.cloudinaryId);
+          // Delete post from db
+          await Event.remove({ _id: req.params.id });
+          console.log("Deleted Event");
+          res.redirect("/createYourOwnEvent");
+        } catch (err) {
+          res.redirect("/createYourOwnEvent");
+        }
+    },
+};
