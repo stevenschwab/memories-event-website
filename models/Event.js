@@ -17,6 +17,30 @@ const EventSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    // activity: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Activity",
+    // },
+    // journalPost: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "JournalPost",
+    // },
+    // media: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Media",
+    // },
+    // qAndA: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Q&A",
+    // },
+    // schedule: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Schedule",
+    // },
+    // travelAndLodging: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: "Travel&Lodging",
+    // },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
