@@ -61,7 +61,7 @@ header > nav > ul > li > a{
 
 /* main section */
 main{
-    height: 700px;
+    height: 650px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -124,9 +124,8 @@ section img{
     }
 }
 
-section > h4{
+main > section > h4{
     display: block;
-    position: absolute;
     bottom: 0;
     width: 100%;
 }

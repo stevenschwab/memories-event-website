@@ -1,4 +1,5 @@
-const Event = require('../models/Event')
+const Event = require('../models/Event');
+const User = require('../models/User');
 
 module.exports = {
     getProfile: async (req, res) => {
@@ -23,9 +24,11 @@ module.exports = {
     getActivities: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
+            const user = await User.findById(event.user);
             res.render('activities.ejs', {
                 event: event,
-                activities: event.activities
+                activities: event.activities,
+                user: user
             });
         } catch(err) {
             console.log(err);
@@ -34,9 +37,11 @@ module.exports = {
     getJournal: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
+            const user = await User.findById(event.user);
             res.render('journal.ejs', {
                 event: event,
-                journalEntries: event.journalEntries
+                journalEntries: event.journalEntries,
+                user: user
             });
         } catch(err) {
             console.log(err);
@@ -45,9 +50,11 @@ module.exports = {
     getMedia: async (req, res) => {
         try {
             const event = await Event.findById(req.params.id);
+            const user = await User.findById(event.user);
             res.render('media.ejs', {
                 event: event,
                 media: event.media,
+                user: user
             });
         } catch(err) {
             console.log(err);
