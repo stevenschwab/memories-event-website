@@ -9,38 +9,18 @@ const EventSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    image: {
-        type: String,
-        required: true,
-    },
-    cloudinaryId: {
-        type: String,
-        require: true,
-    },
-    // activity: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Activity",
-    // },
-    // journalPost: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "JournalPost",
-    // },
-    // media: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Media",
-    // },
-    // qAndA: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Q&A",
-    // },
-    // schedule: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Schedule",
-    // },
-    // travelAndLodging: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: "Travel&Lodging",
-    // },
+    images: [
+        {
+            url: {
+                type: String,
+                required: true,
+            },
+            id: {
+                type: String,
+                required: true,
+            },
+        }
+    ],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

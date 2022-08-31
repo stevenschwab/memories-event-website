@@ -1,5 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const Event = require('../models/Event');
+const fs = require('fs');
 
 module.exports = {
     getEventIndex: async (req, res) => {
@@ -17,13 +18,21 @@ module.exports = {
     createEvent: async (req, res) => {
         try {
             // Upload image to cloudinary
-            const result = await cloudinary.uploader.upload(req.file.path);
+            const uploader = async (path) => await cloudinary.uploads(path, 'Images');
+            // const result = await cloudinary.uploader.upload(req.file.path);
+            const urls = []
+            const files = req.files;
+            for (const file of files) {
+                const { path } = file;
+                const newPath = await uploader(path)
+                urls.push(newPath)
+                fs.unlinkSync(path)
+            }
 
             await Event.create({
                 eventName: req.body.eventName,
                 eventSubHeader: req.body.eventSubHeader,
-                image: result.secure_url,
-                cloudinaryId: result.public_id,
+                images: urls,
                 user: req.user.id,
             });
             console.log('Event has been created!');

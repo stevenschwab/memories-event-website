@@ -6,7 +6,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth');
 
 router.get('/', ensureAuth, createYourOwnEventController.getEventIndex);
 
-router.post('/createEvent', upload.single("file"), createYourOwnEventController.createEvent);
+router.post('/createEvent', upload.array("files"), createYourOwnEventController.createEvent);
 
 router.delete("/deleteEvent/:id", createYourOwnEventController.deleteEvent);
 
