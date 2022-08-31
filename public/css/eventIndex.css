@@ -68,72 +68,11 @@ main{
     position: relative;
 }
 
-section h1,h3,h4{
-    text-align: center;
-}
-
-.images{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    position: relative;
-    justify-content: center;
-    margin-left: 50%;
-    margin-right: 50%;
-}
-
-section img{
-    width: 200px;
-    height: auto;
-}
-
-#topLeft{
-    grid-column: 1;
-    grid-row: 1; /*it must be on the same row as the second image*/
-    z-index: 3; /*this renders the image on the top of the bottom photo.*/
-    margin-top: 68%;
-    margin-left: 4%;
-}
-
-#topMiddle{
-    grid-column: 2;
-    grid-row: 1; /*this makes the image appear on the same row*/
-    z-index: 2;
-}
-
-#bottomLeft{
-    width: 300px;
-    grid-column: 1/span 2;
-    grid-row: 1;
-    margin-top: 75%;
-    margin-left: 16%;
-    z-index: 4;
-}
-
-#right{
-    grid-row: 1;
-    grid-column: 3;
-    margin-top: 50%;
-    margin-left: -22%;
-    z-index: 1;
-    height: 400px;
-    width: 250px;
-}
-
-@media screen and (max-width: 600px) {
-    section img {
-        width: 100%;
-    }
-}
-
-section > h4{
-    display: block;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+main > ul > li > form{
+    display: inline-block;
 }
 
 h1{
-    font-style: italic;
     font-size: xx-large;
     font-weight: bolder;
     margin-bottom: 0;

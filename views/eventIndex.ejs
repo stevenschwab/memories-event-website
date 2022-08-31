@@ -31,7 +31,7 @@
         <% if (events) { %>
             <% events.forEach( el => { %>
                 <li class="eventItem" data-id="<%= el._id %>">
-                    <span><%= el.eventName %></span>
+                    <span class="eventItemName"><%= el.eventName %></span>
                     <form 
                         action="/events/editEvent/<%= el._id %>" 
                         method="get"
