@@ -21,14 +21,48 @@ const EventSchema = new mongoose.Schema({
             },
         }
     ],
+    activities: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Activity",
+        }
+    ],
+    journalEntries: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "JournalPost",
+        }
+    ],
+    media: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Media",
+        }
+    ],
+    questionsAndAnswers: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Q&A",
+        }
+    ],
+    schedule: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Schedule",
+        }
+    ],
+    travelAndLodging: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Travel&Lodging",
+        }
+    ],
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    }
+},  {
+    timestamps: true
 });
 
 module.exports = mongoose.model('Event', EventSchema);
