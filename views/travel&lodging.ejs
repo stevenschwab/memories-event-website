@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel & Lodging</title>
-    <link rel="stylesheet" href="css/travel&lodging.css">
+    <link rel="stylesheet" type="text/css" href="/css/travel&lodging.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <a href="/events" id="homeIcon"><i class="fas fa-home"></i></a>
+        <a href="/events/<%= event.id %>" id="homeIcon"><i class="fas fa-home"></i></a>
         <nav>
             <ul>
-                <li><a href="/travelAndlodging">TRAVEL & LODGING</a></li>
-                <li><a href="/activities">ACTIVITIES</a></li>
-                <li><a href="/journal">JOURNAL</a></li>
-                <li><a href="/media">MEDIA</a></li>
-                <li><a href="/schedule">SCHEDULE</a></li>
-                <li><a href="/qAnda">Q&A</a></li>
+                <li><a href="/events/<%= event.id %>/travelAndlodging">TRAVEL & LODGING</a></li>
+                <li><a href="/events/<%= event.id %>/activities">ACTIVITIES</a></li>
+                <li><a href="/events/<%= event.id %>/journal">JOURNAL</a></li>
+                <li><a href="/events/<%= event.id %>/media">MEDIA</a></li>
+                <li><a href="/events/<%= event.id %>/schedule">SCHEDULE</a></li>
+                <li><a href="/events/<%= event.id %>/qAnda">Q&A</a></li>
             </ul>
         </nav>
     </header>
@@ -29,6 +29,15 @@
             <h1>Travel & Lodging</h1>
             <h3>Places to stay</h3>
         </section>
+        <!-- <section class="images">
+            <img id="topLeft" src="<%= event.images[0].secureUrl %>" alt="">
+            <img id="topMiddle" src="<%= event.images[1].secureUrl %>" alt="">
+            <img id="bottomLeft" src="<%= event.images[2].secureUrl %>" alt="">
+            <img id="right" src="<%= event.images[3].secureUrl %>" alt="">
+        </section>
+        <section class="newsletter">
+            <h4>Newsletter</h4>
+        </section> -->
     </main>
 
     <!-- footer on the left hand-side of the page -->
