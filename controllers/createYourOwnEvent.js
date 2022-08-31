@@ -18,14 +18,17 @@ module.exports = {
     createEvent: async (req, res) => {
         try {
             // Upload image to cloudinary
-            const uploader = async (path) => await cloudinary.uploads(path, 'Images');
+            const uploader = async (path) => await cloudinary.uploader.upload(path);
             // const result = await cloudinary.uploader.upload(req.file.path);
             const urls = []
             const files = req.files;
             for (const file of files) {
                 const { path } = file;
-                const newPath = await uploader(path)
-                urls.push(newPath)
+                const newPath = await uploader(path);
+                urls.push({
+                    secureUrl: newPath.secure_url, 
+                    cloudinaryId: newPath.public_id 
+                })
                 fs.unlinkSync(path)
             }
 
@@ -46,12 +49,19 @@ module.exports = {
           // Find event by id
           let event = await Event.findById({ _id: req.params.id });
           // Delete image from cloudinary
-          await cloudinary.uploader.destroy(event.cloudinaryId);
-          // Delete post from db
-          await Event.remove({ _id: req.params.id });
+          const imageDeleter = async (cloudinaryId) => await cloudinary.uploader.destroy(cloudinaryId);
+
+          const images = event.images;
+          for (const image of images) {
+              const { secureUrl, cloudinaryId, _id } = image;
+              await imageDeleter(cloudinaryId);
+          }
+          // Delete event from db
+          await Event.deleteOne({ _id: req.params.id });
           console.log("Deleted Event");
           res.redirect("/createYourOwnEvent");
         } catch (err) {
+            console.log(err);
           res.redirect("/createYourOwnEvent");
         }
     },

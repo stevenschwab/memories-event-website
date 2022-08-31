@@ -11,11 +11,11 @@ const EventSchema = new mongoose.Schema({
     },
     images: [
         {
-            url: {
+            secureUrl: {
                 type: String,
                 required: true,
             },
-            id: {
+            cloudinaryId: {
                 type: String,
                 required: true,
             },
