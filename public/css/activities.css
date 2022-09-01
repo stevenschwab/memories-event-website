@@ -59,6 +59,12 @@ header > nav > ul > li > a{
     color: black;
 }
 
+header > nav > ul > li > a.active, 
+header > nav > ul > li > a:hover, 
+header > nav > ul > li > a:focus {
+    text-decoration: underline;
+}
+
 /* main section */
 main{
     height: 700px;
