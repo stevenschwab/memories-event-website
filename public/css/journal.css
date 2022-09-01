@@ -121,19 +121,6 @@ section h1,h3{
     margin-top: 10px;
 }
 
-.yellow-section{
-    grid-column: 8/span 12;
-    grid-row: 3;
-    z-index: 4;
-    background-color: #dfc465;
-    height: 500px;
-    width: 600px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .yellow-section-tab{
     grid-column: 8/span 12;
     grid-row: 1;
@@ -153,6 +140,62 @@ section h1,h3{
 .journal-name{
     color: white;
     opacity: 0.8;
+}
+
+.yellow-section{
+    grid-column: 8/span 12;
+    grid-row: 3;
+    z-index: 4;
+    background-color: #dfc465;
+    height: 500px;
+    width: 600px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.journal-container-without-buttons{
+    height: 80%;
+    width: 80%;
+    display: grid;
+    row-gap: 10px;
+}
+
+.journal-entry{
+    background-color: #f6f6f0;
+    border-radius: 5px;
+}
+
+.journal-empty-space-container{
+    display: grid;
+    row-gap: 10%;
+}
+
+.journal-empty-space{
+    background-color: #f6f6f0;
+    border-radius: 5px;
+}
+
+.journal-buttons-container{
+    display: flex;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    padding-left: 10%;
+}
+
+.add-journal-entry-button{
+    width: 90%;
+    text-align: center;
+}
+
+.scroll-journal-button{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* footer */
