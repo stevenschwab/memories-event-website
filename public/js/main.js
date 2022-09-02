@@ -28,3 +28,16 @@ $(document).ready(function () {
       });
     });
 });
+
+let journalIndex = 3
+$('#journalScrollIcon').click(function() {
+    //get list of all h1s on the page.
+    const journal_list = document.querySelectorAll('.journal-entry');
+    //convert to array so we can use .click() or .scrollIntoView() later...
+    let arrayList = Array.from(journal_list);
+    //scroll to journal entries
+    if (arrayList[journalIndex] !== undefined){
+        arrayList[journalIndex].scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
+        journalIndex += 1;
+    }
+});
