@@ -11,7 +11,6 @@
         if (empty) {
             $('#submit').attr('disabled', 'disabled');
         } else {
-            console.log(empty);
             $('#submit').removeAttr('disabled');
         }
     });
@@ -41,3 +40,19 @@ $('#journalScrollIcon').click(function() {
         journalIndex += 1;
     }
 });
+
+function disableImages() {
+    var T = document.getElementById("mediaImages");
+    var Y = document.getElementById("addImages");
+
+    T.classList.add("disabled");
+    Y.classList.remove("disabled");
+}
+
+function enableImages() {
+    var T = document.getElementById("mediaImages");
+    var Y = document.getElementById("addImages");
+    
+    Y.classList.add("disabled");
+    T.classList.remove("disabled");
+}

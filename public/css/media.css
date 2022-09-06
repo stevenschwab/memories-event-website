@@ -150,34 +150,35 @@ section h1,h3{
     height: 500px;
     width: 600px;
     border-radius: 5px;
+    padding: 10px 20px 20px 20px;
+}
+
+.media-images{
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 20px 20px 20px;
+    gap: 15px;
     overflow-y: auto;
 }
 
 .media-image{
     background-color: white;
     height: 100px;
-    width: 130px;
+    width: 125px;
     border-radius: 5px;
     z-index: 5;
 }
 
-.media-add-button{
+.media-add-button-container{
     height: 100px;
-    width: 130px;
+    width: 125px;
+    border-radius: 5px;
+    z-index: 5;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 5;
-}
-
-.disabled{
-    display: none;
 }
 
 .add-image-container{
@@ -211,11 +212,15 @@ section h1,h3{
     justify-content: center;
 }
 
-.add-image-container-button > input{
+.add-image-container-button > button{
     padding: 5px 20px;
     border-radius: 10px;
     box-shadow: none;
     margin: 0 5px;
+}
+
+.disabled{
+    display: none;
 }
 
 /* interior of white container */

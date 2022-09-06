@@ -36,23 +36,29 @@
                 <div class="album-name">Growing Up</div>
             </div>
             <div class="pink-section">
-                <!-- <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-image"></div>
-                <div class="media-add-button">+ Add</div> -->
-                <div class="add-image-container">
+                
+                <div id="mediaImages" class="media-images">
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-image"></div>
+                    <div class="media-add-button-container">
+                        <button onclick="disableImages()">+ Add</button>
+                    </div>
+                </div>
+                
+                <div class="add-image-container disabled" id="addImages">
                     <div class="add-image-container-title">
                         <p>Add to the album "Growing Up"</p>
                     </div>
@@ -76,10 +82,11 @@
                         </div>
                     </div>
                     <div class="add-image-container-button">
-                        <input type="submit" value="UPLOAD">
-                        <input type="submit" value="CANCEL">
+                        <button onclick="enableImages()">UPLOAD</button>
+                        <button onclick="enableImages()">CANCEL</button>
                     </div>
                 </div>
+                
             </div>
         </section>
     </main>
