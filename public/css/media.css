@@ -121,19 +121,6 @@ section h1,h3{
     margin-top: 10px;
 }
 
-.pink-section{
-    grid-column: 8/span 12;
-    grid-row: 3;
-    z-index: 4;
-    background-color: #d29a9e;
-    height: 500px;
-    width: 600px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .pink-section-tab{
     grid-column: 8/span 12;
     grid-row: 1;
@@ -153,6 +140,125 @@ section h1,h3{
 .album-name{
     color: white;
     opacity: 0.8;
+}
+
+.pink-section{
+    grid-column: 8/span 12;
+    grid-row: 3;
+    z-index: 4;
+    background-color: #d29a9e;
+    height: 500px;
+    width: 600px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 20px 20px 20px;
+    overflow-y: auto;
+}
+
+.media-image{
+    background-color: white;
+    height: 100px;
+    width: 130px;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.media-add-button{
+    height: 100px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+}
+
+.disabled{
+    display: none;
+}
+
+.add-image-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-image-container-title{
+    width: 100%;
+    height: 10%;
+    text-align: center;
+}
+
+.add-image-white-container{
+    width: 85%;
+    background-color: white;
+    height: 80%;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-image-container-button{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.add-image-container-button > input{
+    padding: 5px 20px;
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 0 5px;
+}
+
+/* interior of white container */
+
+.add-image-white-container-file-name{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-image-white-container-image-previews{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow-y: auto;
+}
+
+.add-image-white-container-image-preview{
+    height: 100px;
+    width: 100px;
+    background-color: green;
+}
+
+.add-image-white-container-checkboxes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+}
+
+.add-image-white-container-checkbox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
 }
 
 /* footer */
