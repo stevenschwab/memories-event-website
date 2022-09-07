@@ -156,6 +156,14 @@ section h1,h3{
     justify-content: flex-end;
 }
 
+.journal-container-with-buttons{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
 .journal-container-without-buttons{
     height: 80%;
     width: 80%;
@@ -203,9 +211,17 @@ section h1,h3{
     padding-left: 10%;
 }
 
-.add-journal-entry-button{
+.add-journal-entry-button-container{
     width: 90%;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-journal-entry-button-container > button{
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 .scroll-journal-button{
@@ -215,6 +231,51 @@ section h1,h3{
     align-items: center;
     cursor: pointer;
 }
+
+/* add story container */
+.disabled{
+    display: none !important;
+}
+
+.add-journal-entry-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-journal-entry-container-title{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-journal-entry-white-container{
+    height: 80%;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-journal-entry-white-container > input{
+    width: 90%;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.add-image-container-button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 10%;
+}
+
 
 /* footer */
 footer {

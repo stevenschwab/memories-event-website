@@ -42,16 +42,32 @@ $('#journalScrollIcon').click(function() {
 });
 
 function disableImages() {
-    var T = document.getElementById("mediaImages");
-    var Y = document.getElementById("addImages");
+    let T = document.getElementById("mediaImages");
+    let Y = document.getElementById("addImages");
 
     T.classList.add("disabled");
     Y.classList.remove("disabled");
 }
 
 function enableImages() {
-    var T = document.getElementById("mediaImages");
-    var Y = document.getElementById("addImages");
+    let T = document.getElementById("mediaImages");
+    let Y = document.getElementById("addImages");
+    
+    Y.classList.add("disabled");
+    T.classList.remove("disabled");
+}
+
+function addStory() {
+    let T = document.getElementById("stories");
+    let Y = document.getElementById("addJournalEntry");
+
+    T.classList.add("disabled");
+    Y.classList.remove("disabled");
+}
+
+function showStories() {
+    let T = document.getElementById("stories");
+    let Y = document.getElementById("addJournalEntry");
     
     Y.classList.add("disabled");
     T.classList.remove("disabled");

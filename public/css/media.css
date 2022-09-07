@@ -232,7 +232,7 @@ section h1,h3{
 }
 
 .disabled{
-    display: none;
+    display: none !important;
 }
 
 /* interior of white container */
