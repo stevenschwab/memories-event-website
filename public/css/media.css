@@ -150,7 +150,11 @@ section h1,h3{
     height: 500px;
     width: 600px;
     border-radius: 5px;
-    padding: 10px 20px 20px 20px;
+    padding: 10px 20px 0px 20px;
+}
+
+#mediaImages{
+    height: 100%;
 }
 
 .media-images{
@@ -160,6 +164,7 @@ section h1,h3{
     flex-wrap: wrap;
     gap: 15px;
     overflow-y: auto;
+    height: 90%;
 }
 
 .media-image{
@@ -171,13 +176,13 @@ section h1,h3{
 }
 
 .media-add-button-container{
-    height: 100px;
-    width: 125px;
+    height: 10%;
+    width: 100%;
     border-radius: 5px;
     z-index: 5;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     z-index: 5;
 }
 
@@ -214,7 +219,7 @@ section h1,h3{
     width: 100%;
     height: 10%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
