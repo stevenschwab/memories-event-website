@@ -63,6 +63,7 @@ function addStory() {
 
     T.classList.add("disabled");
     Y.classList.remove("disabled");
+    $('#journalEntry').val('');
 }
 
 function showStories() {
@@ -71,4 +72,5 @@ function showStories() {
     
     Y.classList.add("disabled");
     T.classList.remove("disabled");
+    $('#journalEntry').val('');
 }

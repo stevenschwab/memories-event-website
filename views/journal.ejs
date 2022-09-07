@@ -105,13 +105,13 @@
                 </div>
 
                 <div class="add-journal-entry-container disabled" id="addJournalEntry">
-                    <div class="add-journal-entry-container-title">
-                        <p>Add a story</p>
-                    </div>
                     <div class="add-journal-entry-white-container">
+                        <label for="storyTitle">Story Title</label>
+                        <input type="text" name="storyTitle" id="storyTitle">
+                        <label for="journalEntry">Story</label>
                         <textarea name="journalEntry" id="journalEntry" cols="30" rows="10"></textarea>
                     </div>
-                    <div class="add-image-container-button">
+                    <div class="add-journal-entry-container-button">
                         <button onclick="showStories()">POST</button>
                         <button onclick="showStories()">CANCEL</button>
                     </div>
