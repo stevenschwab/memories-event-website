@@ -158,6 +158,7 @@ section h1,h3{
 
 .journal-container-with-buttons{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,6 +170,7 @@ section h1,h3{
     width: 80%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     gap: 10px;
 }
 
@@ -181,13 +183,11 @@ section h1,h3{
 }
 
 .journal-entry{
-    min-height: 90px;
-    max-height: 90px;
+    height: auto;
     background-color: #f6f6f0;
     border-radius: 5px;
-    padding: 0 5%;
+    padding: 0 5% 5% 5%;
     font-size: 12px;
-    overflow: hidden;
 }
 
 .journal-empty-space-container{
