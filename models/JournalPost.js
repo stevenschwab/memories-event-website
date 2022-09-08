@@ -1,18 +1,14 @@
 const mongoose = require("mongoose");
 
 const JournalSchema = new mongoose.Schema({
-  title: {
+  storyTitle: {
     type: String,
     required: true,
   },
   story: {
     type: String,
     required: true,
-  },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
+  }
 },  {
   timestamps: true
 });

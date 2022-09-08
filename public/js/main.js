@@ -74,3 +74,21 @@ function showStories() {
     T.classList.remove("disabled");
     $('#journalEntry').val('');
 }
+
+(function() {
+    $('.add-journal-entry-white-container input, textarea').on('keyup change', function() {
+
+        var empty = false;
+        $('.add-journal-entry-white-container input, textarea').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#postJournal').attr('disabled', 'disabled');
+        } else {
+            $('#postJournal').removeAttr('disabled');
+        }
+    });
+})()
