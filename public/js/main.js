@@ -1,7 +1,7 @@
 (function() {
     $('form input').on('keyup change', function() {
 
-        var empty = false;
+        let empty = false;
         $('form input').each(function() {
             if ($(this).val() == '') {
                 empty = true;
@@ -19,7 +19,7 @@
 $(document).ready(function () {
     // Underline to remain in navbar after click using URL
     jQuery(function ($) {
-      var path = window.location.href; // because the 'href' property of the DOM element is the absolute path
+      const path = window.location.href; // because the 'href' property of the DOM element is the absolute path
       $('header > nav > ul > li > a').each(function () {
         if (this.href === path) {
           $(this).addClass('active');
@@ -78,7 +78,7 @@ function showStories() {
 (function() {
     $('.add-journal-entry-white-container input, textarea').on('keyup change', function() {
 
-        var empty = false;
+        let empty = false;
         $('.add-journal-entry-white-container input, textarea').each(function() {
             if ($(this).val() == '') {
                 empty = true;
@@ -92,3 +92,10 @@ function showStories() {
         }
     });
 })()
+
+function onlyOne(checkbox) {
+    const checkboxes = document.querySelectorAll('.add-image-checkbox')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}

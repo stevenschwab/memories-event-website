@@ -52,8 +52,8 @@
                         <img src="/imgs/media/11media.png" alt="" class="media-image">
                         <img src="/imgs/media/2media.png" alt="" class="media-image">
                         <img src="/imgs/media/5media.png" alt="" class="media-image">
-                        <img src="/imgs/media/4media.png" alt="" class="media-image">
-                        <img src="/imgs/media/7media.png" alt="" class="media-image">
+                        <img src="/imgs/media/12mediaanonymous.png" alt="" class="media-image">
+                        <img src="/imgs/media/13mediaanonymous.png" alt="" class="media-image">
                         <div class="media-add-button-container">
                             <button onclick="disableImages()">+ Add</button>
                         </div>
@@ -75,11 +75,23 @@
                         <div class="add-image-white-container-checkboxes">
                             <div class="add-image-white-container-checkbox">
                                 <label for="addCredit">Add Credit: </label>
-                                <input class="add-image-checkbox" type="checkbox" name="addCredit" id="addCredit">
+                                <input 
+                                    class="add-image-checkbox" 
+                                    type="checkbox" 
+                                    name="addCredit" 
+                                    id="addCredit" 
+                                    onclick="onlyOne(this)"
+                                >
                             </div>
                             <div class="add-image-white-container-checkbox">
                                 <label for="anonymous">Anonymous: </label>
-                                <input class="add-image-checkbox" type="checkbox" name="anonymous" id="anonymous">
+                                <input 
+                                    class="add-image-checkbox" 
+                                    type="checkbox" 
+                                    name="anonymous" 
+                                    id="anonymous" 
+                                    onclick="onlyOne(this)"
+                                >
                             </div>
                         </div>
                     </div>
