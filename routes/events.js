@@ -8,6 +8,8 @@ router.get('/:id/activities', eventController.getActivities);
 
 router.get('/:id/journal', eventController.getJournal);
 
+router.post('/:id/journal/createJournalPost', eventController.createJournalPost);
+
 router.get('/:id/media', eventController.getMedia);
 
 router.get('/:id/qAndA', eventController.getQAndA);

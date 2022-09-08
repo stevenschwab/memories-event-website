@@ -8,7 +8,11 @@ const JournalSchema = new mongoose.Schema({
   story: {
     type: String,
     required: true,
-  }
+  },
+  eventId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Event",
+  },
 },  {
   timestamps: true
 });

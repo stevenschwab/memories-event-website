@@ -1,5 +1,6 @@
 const Event = require('../models/Event');
 const User = require('../models/User');
+const JournalPost = require('../models/JournalPost');
 
 module.exports = {
     getProfile: async (req, res) => {
@@ -38,14 +39,28 @@ module.exports = {
         try {
             const event = await Event.findById(req.params.id);
             const user = await User.findById(event.user);
+            const journalEntries = await JournalPost.find({ eventId: req.params.id });
             res.render('journal.ejs', {
                 event: event,
-                journalEntries: event.journalEntries,
+                journalEntries: journalEntries,
                 user: user
             });
         } catch(err) {
             console.log(err);
         }
+    },
+    createJournalPost: async (req, res) => {
+        try {
+            await JournalPost.create({
+              storyTitle: req.body.storyTitle,
+              story: req.body.story,
+              eventId: req.params.id,
+            });
+            console.log("Post has been added!");
+            res.redirect(`/events/${req.params.id}/journal`);
+          } catch (err) {
+            console.log(err);
+          }
     },
     getMedia: async (req, res) => {
         try {
