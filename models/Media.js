@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const MediaSchema = new mongoose.Schema({
-    image: {
+    secureUrl: {
         type: String,
         required: true,
     },
@@ -17,10 +17,13 @@ const MediaSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    comments: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "MediaComment",
-    },
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            required: false,
+            ref: "MediaComment",
+        }
+    ],
     likes: {
         type: Number,
         required: false,

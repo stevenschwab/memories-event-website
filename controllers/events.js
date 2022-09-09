@@ -2,6 +2,7 @@ const cloudinary = require("../middleware/cloudinary");
 const Event = require('../models/Event');
 const User = require('../models/User');
 const JournalPost = require('../models/JournalPost');
+const Media = require('../models/Media');
 const fs = require('fs');
 
 module.exports = {
@@ -82,26 +83,22 @@ module.exports = {
             // Upload image to cloudinary
             const uploader = async (path) => await cloudinary.uploader.upload(path);
             // const result = await cloudinary.uploader.upload(req.file.path);
-            const urls = []
             const files = req.files;
             for (const file of files) {
-                const { path } = file;
-                const newPath = await uploader(path);
-                urls.push({
-                    secureUrl: newPath.secure_url, 
-                    cloudinaryId: newPath.public_id 
-                })
+                let { path } = file;
+                let newPath = await uploader(path);
+
+                await Media.create({
+                    secureUrl: newPath.secure_url,
+                    cloudinaryId: newPath.public_id,
+                    isAnonymous: req.body.anonymous,
+                    credit: req.body.mediaCredit,
+                    eventId: req.params.id
+                });
                 fs.unlinkSync(path)
             }
-
-            await Event.create({
-                eventName: req.body.eventName,
-                eventSubHeader: req.body.eventSubHeader,
-                images: urls,
-                user: req.user.id,
-            });
-            console.log('Event has been created!');
-            res.redirect('/createYourOwnEvent');
+            console.log('Media has been added!');
+            res.redirect(`/events/${req.params.id}/media`);
         } catch(err) {
             console.log(err);
         }

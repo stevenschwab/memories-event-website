@@ -66,7 +66,13 @@
                     </div>
                 </div>
                 
-                <div class="add-image-container disabled" id="addImages">
+                <form 
+                    action="/events/<%= event.id %>/media/addMedia" 
+                    enctype="multipart/form-data" 
+                    method="POST"
+                    class="add-image-container disabled" 
+                    id="addImages"
+                >
                     <div class="add-image-container-title">
                         <p>Add to the album "Growing Up"</p>
                     </div>
@@ -93,7 +99,7 @@
                             <div class="add-image-white-container-checkbox">
                                 <label for="addCredit">Add Credit: </label>
                                 <input 
-                                    class="add-image-checkbox" 
+                                    class="add-image-checkbox form-control" 
                                     type="checkbox" 
                                     name="addCredit" 
                                     id="addCredit" 
@@ -105,11 +111,12 @@
                                 name="mediaCredit" 
                                 id="mediaCredit" 
                                 placeholder="Your Name"
+                                class="form-control"
                             >
                             <div class="add-image-white-container-checkbox">
                                 <label for="anonymous">Anonymous: </label>
                                 <input 
-                                    class="add-image-checkbox" 
+                                    class="add-image-checkbox form-control" 
                                     type="checkbox" 
                                     name="anonymous" 
                                     id="anonymous" 
@@ -119,10 +126,10 @@
                         </div>
                     </div>
                     <div class="add-image-container-button">
-                        <button onclick="enableImages()">UPLOAD</button>
+                        <button type="submit" id="addMediaUploadButton" disabled>UPLOAD</button>
                         <button onclick="enableImages()">CANCEL</button>
                     </div>
-                </div>
+                </form>
                 
             </div>
         </section>

@@ -1,17 +1,17 @@
 (function() {
-    $('form input').on('keyup change', function() {
+    $('#eventIndexForm input').on('keyup change', function() {
 
         let empty = false;
-        $('form input').each(function() {
+        $('#eventIndexForm input').each(function() {
             if ($(this).val() == '') {
                 empty = true;
             }
         });
 
         if (empty) {
-            $('#submit').attr('disabled', 'disabled');
+            $('#eventIndexSubmit').attr('disabled', 'disabled');
         } else {
-            $('#submit').removeAttr('disabled');
+            $('#eventIndexSubmit').removeAttr('disabled');
         }
     });
 })()
@@ -62,6 +62,7 @@ function enableImages() {
     document.getElementById('image-previews').classList.add("disabled");
     document.querySelector('.add-image-white-container-image-button').classList.remove("disabled");
     $('input[name="mediaCredit"]').hide();
+    document.getElementById('mediaCredit').val() == '';
     
     Y.classList.add("disabled");
     T.classList.remove("disabled");
@@ -108,6 +109,13 @@ function onlyOne(checkbox) {
     checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false
     });
+    //hide media credit input if anonymous selected
+    $('input[name="anonymous"]').on('click', function () {
+        if ($(this).prop('checked')) {
+            document.getElementById('mediaCredit').value = '';
+            $('input[name="mediaCredit"]').hide();
+        }
+    });
 }
 
 $(function () {
@@ -118,6 +126,7 @@ $(function () {
         if ($(this).prop('checked')) {
             $('input[name="mediaCredit"]').fadeIn();
         } else {
+            document.getElementById('mediaCredit').value = '';
             $('input[name="mediaCredit"]').hide();
         }
     });
@@ -156,3 +165,23 @@ function showname() {
         imagePreviewContainer.classList.remove("disabled");
     }
 };
+
+(function() {
+    $('#addImages input').on('keyup change', function() {
+
+        let empty = false;
+        if ($('#mediaImagesUpload').val() == '') {
+            empty = true;
+        } else if ($('input[name="addCredit"]').prop('checked') === true && document.getElementById('mediaCredit').value === '') {
+            empty = true;
+        } else if ($('input[name="addCredit"]').prop('checked') === false && $('input[name="anonymous"]').prop('checked') === false) {
+            empty = true;
+        }
+
+        if (empty) {
+            $('#addMediaUploadButton').attr('disabled', 'disabled');
+        } else {
+            $('#addMediaUploadButton').removeAttr('disabled');
+        }
+    });
+})()
