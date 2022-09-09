@@ -116,12 +116,19 @@ function showname() {
     if (name.files.length > 0) {
         // RUN A LOOP TO CHECK EACH SELECTED FILE.
         for (let i = 0; i <= name.files.length - 1; i++) {
-            document.getElementById('media-file-names').innerHTML =
-            document.getElementById('media-file-names').innerHTML
-            +
-            ' ' + name.files[i].name
-            +
-            ','
+            if (i >= 0 && i < name.files.length - 1){
+                document.getElementById('media-file-names').innerHTML =
+                document.getElementById('media-file-names').innerHTML
+                +
+                ' ' + name.files[i].name
+                +
+                ','
+            } else {
+                document.getElementById('media-file-names').innerHTML =
+                document.getElementById('media-file-names').innerHTML
+                +
+                ' ' + name.files[i].name
+            }
         };
         // show image previews
         const imagePreviewContainer = document.getElementById('image-previews');
