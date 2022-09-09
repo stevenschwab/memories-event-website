@@ -175,6 +175,21 @@ section h1,h3{
     border: 2px solid white;
 }
 
+.media-anonymous-container{
+    position: relative;
+    text-align: center;
+}
+
+.media-anonymous-credit{
+    position: absolute;
+    width: 100%;
+    bottom: 4%;
+    left: 0%;
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 .media-add-button-container{
     height: 100px;
     width: 125px;
