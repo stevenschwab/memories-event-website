@@ -13,13 +13,21 @@ const MediaSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
     },
+    credit: {
+        type: String,
+        required: false,
+    },
+    comments: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "MediaComment",
+    },
     likes: {
         type: Number,
-        required: true,
+        required: false,
     },
-    user: {
+    eventId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        ref: "Event",
     },
 },  {
     timestamps: true

@@ -109,6 +109,19 @@ function onlyOne(checkbox) {
     });
 }
 
+$(function () {
+    $('input[name="mediaCredit"]').hide();
+
+    //show it when the checkbox is clicked
+    $('input[name="addCredit"]').on('click', function () {
+        if ($(this).prop('checked')) {
+            $('input[name="mediaCredit"]').fadeIn();
+        } else {
+            $('input[name="mediaCredit"]').hide();
+        }
+    });
+});
+
 function showname() {
     const name = document.getElementById('mediaImagesUpload');
     console.log(name.files);
