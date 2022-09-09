@@ -54,10 +54,13 @@ function enableImages() {
     let Y = document.getElementById("addImages");
     document.getElementById('media-file-names').innerHTML = '';
     document.getElementById('mediaImagesUpload').value = '';
+    document.getElementById('image-previews').innerHTML = '';
     const checkboxes = document.querySelectorAll('.add-image-checkbox');
     checkboxes.forEach((item) => {
         item.checked = false;
     });
+    document.getElementById('image-previews').classList.add("disabled");
+    document.querySelector('.add-image-white-container-image-button').classList.remove("disabled");
     
     Y.classList.add("disabled");
     T.classList.remove("disabled");
@@ -108,6 +111,7 @@ function onlyOne(checkbox) {
 
 function showname() {
     const name = document.getElementById('mediaImagesUpload');
+    console.log(name.files);
     // VALIDATE OR CHECK IF ANY FILE IS SELECTED.
     if (name.files.length > 0) {
         // RUN A LOOP TO CHECK EACH SELECTED FILE.
@@ -119,5 +123,15 @@ function showname() {
             +
             ','
         };
+        // show image previews
+        const imagePreviewContainer = document.getElementById('image-previews');
+        for (let i = 0; i <= name.files.length - 1; i++) {
+            let imagePreview = document.createElement("img");
+            imagePreview.className = "add-image-white-container-image-preview";
+            imagePreview.src = URL.createObjectURL(name.files[i]);
+            imagePreviewContainer.appendChild(imagePreview);
+        };
+        document.querySelector('.add-image-white-container-image-button').classList.add("disabled");
+        imagePreviewContainer.classList.remove("disabled");
     }
 };
