@@ -240,24 +240,45 @@ section h1,h3{
     height: 10%;
     width: 100%;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+}
+
+.add-image-white-container-file-name > div{
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 75%;
 }
 
 .add-image-white-container-image-previews{
     height: 80%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 10px;
     overflow-y: auto;
 }
 
+.add-image-white-container-image-button{
+    align-self: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-image-white-container-image-button > input{
+    width: 190px;
+}
+
 .add-image-white-container-image-preview{
-    height: 100px;
-    width: 100px;
+    min-height: 100px;
+    min-width: 100px;
     background-color: green;
 }
 

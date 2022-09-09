@@ -52,6 +52,12 @@ function disableImages() {
 function enableImages() {
     let T = document.getElementById("mediaImages");
     let Y = document.getElementById("addImages");
+    document.getElementById('media-file-names').innerHTML = '';
+    document.getElementById('mediaImagesUpload').value = '';
+    const checkboxes = document.querySelectorAll('.add-image-checkbox');
+    checkboxes.forEach((item) => {
+        item.checked = false;
+    });
     
     Y.classList.add("disabled");
     T.classList.remove("disabled");
@@ -94,8 +100,24 @@ function showStories() {
 })()
 
 function onlyOne(checkbox) {
-    const checkboxes = document.querySelectorAll('.add-image-checkbox')
+    const checkboxes = document.querySelectorAll('.add-image-checkbox');
     checkboxes.forEach((item) => {
         if (item !== checkbox) item.checked = false
-    })
+    });
 }
+
+function showname() {
+    const name = document.getElementById('mediaImagesUpload');
+    // VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+    if (name.files.length > 0) {
+        // RUN A LOOP TO CHECK EACH SELECTED FILE.
+        for (let i = 0; i <= name.files.length - 1; i++) {
+            document.getElementById('media-file-names').innerHTML =
+            document.getElementById('media-file-names').innerHTML
+            +
+            ' ' + name.files[i].name
+            +
+            ','
+        };
+    }
+};

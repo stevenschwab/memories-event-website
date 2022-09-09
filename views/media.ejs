@@ -66,11 +66,26 @@
                     </div>
                     <div class="add-image-white-container">
                         <div class="add-image-white-container-file-name">
-                            <p>Files Selected: AB1008.jpg, AB8764.jpg</p>
+                            <p>Files Selected:</p>
+                            <div id="media-file-names"></div>
                         </div>
                         <div class="add-image-white-container-image-previews">
+                            <!-- <div class="add-image-white-container-image-preview"></div>
                             <div class="add-image-white-container-image-preview"></div>
                             <div class="add-image-white-container-image-preview"></div>
+                            <div class="add-image-white-container-image-preview"></div>
+                            <div class="add-image-white-container-image-preview"></div> -->
+                            <div class="add-image-white-container-image-button">
+                                <input 
+                                    type="file" 
+                                    class="form-control" 
+                                    id="mediaImagesUpload" 
+                                    name="files" 
+                                    accept="image/*" 
+                                    multiple
+                                    onchange="showname()"
+                                >
+                            </div>
                         </div>
                         <div class="add-image-white-container-checkboxes">
                             <div class="add-image-white-container-checkbox">
