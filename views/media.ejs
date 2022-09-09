@@ -39,27 +39,16 @@
                 
                 <div id="mediaImages">
                     <div class="media-images">
-                        <img src="/imgs/media/1media.png" alt="" class="media-image">
-                        <img src="/imgs/media/2media.png" alt="" class="media-image">
-                        <img src="/imgs/media/3media.png" alt="" class="media-image">
-                        <img src="/imgs/media/4media.png" alt="" class="media-image">
-                        <img src="/imgs/media/5media.png" alt="" class="media-image">
-                        <img src="/imgs/media/6media.png" alt="" class="media-image">
-                        <img src="/imgs/media/7media.png" alt="" class="media-image">
-                        <img src="/imgs/media/3media.png" alt="" class="media-image">
-                        <img src="/imgs/media/9media.png" alt="" class="media-image">
-                        <img src="/imgs/media/10media.png" alt="" class="media-image">
-                        <img src="/imgs/media/11media.png" alt="" class="media-image">
-                        <img src="/imgs/media/2media.png" alt="" class="media-image">
-                        <img src="/imgs/media/5media.png" alt="" class="media-image">
-                        <div class="media-anonymous-container">
-                            <img src="/imgs/media/12mediaanonymous.png" alt="" class="media-image">
-                            <span class="media-anonymous-credit">anonymous</span>
-                        </div>
-                        <div class="media-anonymous-container">
-                            <img src="/imgs/media/13mediaanonymous.png" alt="" class="media-image">
-                            <span class="media-anonymous-credit">anonymous</span>
-                        </div>
+                        <% media.forEach( el => { %>
+                            <% if (el.isAnonymous) { %>
+                            <div class="media-anonymous-container">
+                                <img src="<%= el.secureUrl %>" alt="" class="media-image" data-id="<%= el._id %>">
+                                <span class="media-anonymous-credit">anonymous</span>
+                            </div>
+                            <% } else { %>
+                            <img src="<%= el.secureUrl %>" alt="" class="media-image" data-id="<%= el._id %>">
+                            <% } %>
+                        <% }) %>
                         <div class="media-add-button-container">
                             <button onclick="disableImages()">+ Add</button>
                         </div>

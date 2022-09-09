@@ -12,6 +12,7 @@ const MediaSchema = new mongoose.Schema({
     isAnonymous: {
         type: Boolean,
         required: true,
+        default: false
     },
     credit: {
         type: String,

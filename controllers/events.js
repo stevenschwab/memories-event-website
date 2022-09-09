@@ -69,9 +69,10 @@ module.exports = {
         try {
             const event = await Event.findById(req.params.id);
             const user = await User.findById(event.user);
+            const media = await Media.find({ eventId: req.params.id });
             res.render('media.ejs', {
                 event: event,
-                media: event.media,
+                media: media,
                 user: user
             });
         } catch(err) {
@@ -80,9 +81,12 @@ module.exports = {
     },
     addMedia: async (req, res) => {
         try {
+            if (req.body.anonymous) {
+                req.body.anonymous = true;
+            }
             // Upload image to cloudinary
             const uploader = async (path) => await cloudinary.uploader.upload(path);
-            // const result = await cloudinary.uploader.upload(req.file.path);
+
             const files = req.files;
             for (const file of files) {
                 let { path } = file;
