@@ -101,7 +101,7 @@ function enableImages() {
     document.getElementById('image-previews').classList.add("disabled");
     document.querySelector('.add-image-white-container-image-button').classList.remove("disabled");
     $('input[name="mediaCredit"]').hide();
-    document.getElementById('mediaCredit').val() == '';
+    document.getElementById('mediaCredit').value = '';
     
     Y.classList.add("disabled");
     T.classList.remove("disabled");
