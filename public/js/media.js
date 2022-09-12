@@ -112,3 +112,9 @@ function disableUploadButton() {
     btn.disabled = true;
     btn.innerText = 'Posting...';
 }
+
+$(document).ready(function(){
+    const container = document.querySelector('.media-images');
+
+    container.scrollTo({top: container.scrollHeight, behavior: 'smooth'});
+});
