@@ -109,8 +109,11 @@ function enableImages() {
 
 function disableUploadButton() {
     const btn = document.getElementById('addMediaUploadButton');
+
     btn.disabled = true;
     btn.innerText = 'Posting...';
+
+    document.getElementById("addImages").submit();
 }
 
 $(document).ready(function(){

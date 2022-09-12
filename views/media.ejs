@@ -61,7 +61,6 @@
                     method="POST"
                     class="add-image-container disabled" 
                     id="addImages"
-                    onsubmit="disableUploadButton()"
                 >
                     <div class="add-image-container-title">
                         <p>Add to the album "Growing Up"</p>
@@ -116,8 +115,8 @@
                         </div>
                     </div>
                     <div class="add-image-container-button">
-                        <button type="submit" id="addMediaUploadButton" disabled>UPLOAD</button>
-                        <button type="cancel" onclick="enableImages()">CANCEL</button>
+                        <button type="button" id="addMediaUploadButton" onclick="disableUploadButton()" disabled>UPLOAD</button>
+                        <button type="button" onclick="enableImages()">CANCEL</button>
                     </div>
                 </form>
                 
