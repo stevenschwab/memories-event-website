@@ -106,3 +106,9 @@ function enableImages() {
     Y.classList.add("disabled");
     T.classList.remove("disabled");
 }
+
+function disableUploadButton() {
+    const btn = document.getElementById('addMediaUploadButton');
+    btn.disabled = true;
+    btn.innerText = 'Posting...';
+}
